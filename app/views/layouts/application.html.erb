@@ -3,12 +3,27 @@
   <head>
     <title> <%= titre %> </title>
     <%= csrf_meta_tags %>
-
+    <%= stylesheet_link_tag 'blueprint-css-master/blueprint/screen', :media => 'screen' %>
+    <%= stylesheet_link_tag 'blueprint-css-master/blueprint/print',  :media => 'print' %>
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
-    <%= yield %>
+    <div class="container">
+      <header>
+        <%= image_tag("logo.jpg", :alt => "Application Exemple", :class => "lgo") %>
+        <nav class="navi">
+          <ul>
+            <li><%= link_to "Contact", pages_contact_path , :class => "navt"%></li>
+            <li><%= link_to "Plus D'infos", pages_about_path ,:class => "navt"%></li>
+            <li><%= link_to "Inscription", '#' , :class => "navt"%></li>
+          </ul>
+        </nav>
+      </header>
+      <section class="round">
+        <%= yield %>
+      </section>
+      <%= render 'layouts/footer' %>
   </body>
 </html>
