@@ -7,6 +7,7 @@ gem 'rails', '~> 5.0.0', '>= 5.0.0.1'
 group :development do
   # Use sqlite3 as the database for Active Record
   gem 'sqlite3'
+  gem 'annotate'
 end
 
 group :production do
