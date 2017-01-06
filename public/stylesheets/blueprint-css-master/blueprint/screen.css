@@ -67,6 +67,8 @@ footer nav {
   display: block;
   text-align: center;
   margin: auto;
+  font-size: 20px;
+  margin-top: 20px;
 }
 .container {
   width: 710px;
