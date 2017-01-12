@@ -12,6 +12,11 @@
 require 'digest'
 
 class User < ApplicationRecord
+
+  def user_params
+        params.require(:user).permit(:username, :email, :password, :password_confirmation)
+      end
+
   email_regex = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
   attr_accessor :password
   validates :nom, :presence => true,

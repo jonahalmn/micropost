@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+
+  resources :users, only: [:new, :create], path_names: {new: 'new'}
+
   get '/users/:id', to: 'users#show', as: 'user'
 
   get '/signup', to: 'users#new'
@@ -12,5 +15,7 @@ Rails.application.routes.draw do
   get 'pages/help'
 
 get 'users/show'
+
+
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
